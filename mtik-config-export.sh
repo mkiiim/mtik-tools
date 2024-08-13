@@ -9,7 +9,7 @@ usage() {
 # Default values
 USERNAME="admin"
 EXPORT_DIR="./exports"  # Default export directory
-DELETE_DELAY=2  # Delay in seconds before attempting to delete the file
+DELETE_DELAY=1  # Delay in seconds before attempting to delete the file
 
 # Parse command line arguments
 while [[ "$#" -gt 0 ]]; do
@@ -40,7 +40,7 @@ CLEAN_HOSTNAME=$(echo "$HOSTNAME" | tr -cd '[:alnum:]')
 CLEAN_IP=$(echo "$ROUTER" | tr -cd '[:alnum:]')
 
 # Create a timestamp
-TIMESTAMP=$(date +"%Y%m%d-%H%M")
+TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
 
 # Prefix for the filenames
 FILE_PREFIX="mikrotik-${CLEAN_HOSTNAME}${CLEAN_IP}-${TIMESTAMP}"
