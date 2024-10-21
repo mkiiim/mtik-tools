@@ -102,6 +102,7 @@ fi
 echo "Backup Filename: $BACKUP_FILENAME"
 
 # Create the backups directory if it doesn't exist
+BACKUP_DIR="$BACKUP_DIR/$(echo "$TIMESTAMP" | cut -d'-' -f1)/${CLEAN_HOSTNAME}-${CLEAN_IP}"
 mkdir -p "$BACKUP_DIR"
 echo "Backup Directory: $BACKUP_DIR"
 

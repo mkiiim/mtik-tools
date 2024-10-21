@@ -104,7 +104,9 @@ fi
 echo "Export Filename: $FILE_PREFIX"
 
 # Create the exports directory if it doesn't exist
+EXPORT_DIR="$EXPORT_DIR/$(echo "$TIMESTAMP" | cut -d'-' -f1)/${CLEAN_HOSTNAME}-${CLEAN_IP}"
 mkdir -p "$EXPORT_DIR"
+echo "Export Directory: $EXPORT_DIR"
 
 # Define the list of configurations to export with their corresponding context paths
 if [[ -n "$FULL_BACKUP" ]]; then
